@@ -1,0 +1,7 @@
+:root {
+  --blueGreen: #3a857b;
+  --yellowGreen: #b8db50;
+  --mainRed: #de0400;
+  --blueGreen-opacity: rgba(52, 133, 130, 0.7);
+  --blueGreen-lessopacity: rgba(52, 133, 130, 0.9);
+}
