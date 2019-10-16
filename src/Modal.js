@@ -8,7 +8,7 @@ export default class ModalMail extends Component {
                     <div className="container">
                         <div className="row">
                             <div id="modal" className="col-8 mx-auto col-md-6 
-                            col-lg-4 text-center text-capitalize p-5">
+                            col-lg-4 text-center text-capitalize p-3">
                                 <div className="button-container"><button className="my-btn"><i className="fas fa-times-circle"/></button></div>
                                 <form id="fs-frm" name="simple-contact-form" acceptCharset="utf-8" 
                                 action="https://formspree.io/ydimitrov95@gmail.com" method="post"
@@ -20,8 +20,8 @@ export default class ModalMail extends Component {
                                         <input  type="text" name="name" id="full-name" placeholder="First and Last" required="" />
                                         <div className="emailadress">
                                             <label  htmlFor="email-address">Email Address</label>
-                                            <input  type="email" name="_replyto" id="email-address" placeholder="Email" required="" />
                                         </div>
+                                        <input  type="email" name="_replyto" id="email-address" placeholder="Email" required="" />
                                         <div className="message">
                                             <label  htmlFor="message">Message</label>
                                             <textarea  rows="5" name="message" id="message" placeholder="Write text here" required=""></textarea>
