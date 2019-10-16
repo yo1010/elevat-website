@@ -70,6 +70,7 @@ input{
     border-radius: 0.3rem;
     outline:none;
     border: 1px solid;
+    width: 100% !important;
 }
 textarea{
     border-radius: 0.2rem;
