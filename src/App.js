@@ -7,28 +7,32 @@ import Intro from './Intro';
 import Info from './Info';
 import Card from './Card';
 import ModalMail from './Modal';
+import ModalPhone from './ModalPhone';
 
 class App extends Component {
   constructor() {
     super(),
     this.state = {
       modalOpenData: false,
-      clickat: ''
+      modalOpenPhoneData: false
     }
     this.handleClick = this.handleClick.bind(this);
   }
   getModal = (modalOpen) => {
     this.setState(() => {return {modalOpenData:modalOpen}})
   }
+  getModalPhone = (modalOpenPhone) => {
+    this.setState(() => {return{modalOpenPhoneData:modalOpenPhone}})
+  }
   handleClick(e) {
         if (e.target.className === "fas fa-times-circle") {
           this.setState(() => {
             return{
-              modalOpenData: false
+              modalOpenData: false,
+              modalOpenPhoneData: false
             }
           })
         }
-      console.log(e.target.className)
   }
   componentDidMount() {
     // Listen on click event, call our function.
@@ -39,15 +43,17 @@ class App extends Component {
       window.removeEventListener('click', this.handleClick);
   }
   render() {
-    console.log(this.state.modalOpenData)
     return (
         <React.Fragment>
-          <Navbar modalCallback={this.getModal} />
+          <Navbar modalCallback1={this.getModal} modalCallback2={this.getModalPhone}/>
           <Intro />
           <Info />
           <Card />
           {this.state.modalOpenData == true && 
           <ModalMail />
+          }
+          {this.state.modalOpenPhoneData == true && 
+          <ModalPhone />
           }
         </React.Fragment>
     );

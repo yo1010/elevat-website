@@ -84,7 +84,6 @@ const ProductWrapper = styled.div`
             border: 2px solid var(--blueGreen);
             border-top: 15px solid var(--blueGreen);
             box-shadow:2px 2px 5px 0px rgba(0,0,0,0.2);
-            background: var(--blueGreen-opacity);
             h4{
                 color: var(--yellowGreen);
             }

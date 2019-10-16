@@ -7,15 +7,22 @@ export default class Navbar extends Component {
         super();
         this.state = {
             hasScrolled: false,
-            modalOpen: false
+            modalOpen: false,
+            modalOpenPhone: false
         };
         this.handleScroll = this.handleScroll.bind(this);
         this.openModal = this.openModal.bind(this);
+        this.openModalPhone = this.openModalPhone.bind(this);
     }
 
     passModal = () => {
         let modalOpen = this.state.modalOpen;
-        this.props.modalCallback(modalOpen);
+        this.props.modalCallback1(modalOpen);
+    }
+
+    passModalPhone = () => {
+        let modalOpenPhone = this.state.modalOpenPhone;
+        this.props.modalCallback2(modalOpenPhone);
     }
     
     handleScroll() {
@@ -40,6 +47,15 @@ export default class Navbar extends Component {
             this.passModal()
         })
     }
+    openModalPhone() {
+        this.setState(() => {
+            return {modalOpenPhone: true}
+        },
+        () => {
+            console.log(this.state.modalOpenPhone)
+            this.passModalPhone()
+        })
+    }
     
     componentDidMount() {
         // Listen on scrolling event, call our function.
@@ -61,11 +77,17 @@ export default class Navbar extends Component {
                     </div>
                     <ul className="navbar-nav align-items-center ml-auto">
                         <li className="text-capitalize nav-item ml-1">
-                            <a className="nav-link" href="#"><button className="static">contact us via</button></a></li>
-                        <li className="text-capitalize nav-item ml-0">
-                            <a className="nav-link" href="#"><button className="button" onClick={()=> this.openModal()}><i className="fas fa-envelope" /></button></a></li>
+                            <a className="nav-link"><button className="static">contact us</button></a></li>
                         <li className="text-capitalize nav-item ml-1">
-                            <a className="nav-link" href="#"><button className="button"><i className="fas fa-phone" /></button></a></li>
+                            <a className="nav-link"><button className="button" onClick={()=> this.openModal()}>
+                                <i className="fas fa-edit" /></button></a></li>
+                        <li className="text-capitalize nav-item ml-1">
+                            <a className="nav-link"><button className="button" onClick={()=>this.openModalPhone()}>
+                                <i className="fas fa-phone" /></button></a></li>
+                        <li className="text-capitalize nav-item ml-0">
+                            <a className="nav-link" href="mailto:ydimitrov95@gmail.com?subject=Enquiry&body=Your message">
+                                <button className="button"  id="btnOutlook">
+                                    <i className="fas fa-envelope" /></button></a></li>
                     </ul>
                 </NavWrapper>
             </div>
