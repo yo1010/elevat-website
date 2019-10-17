@@ -49,6 +49,7 @@ background: rgba(0,0,0,0.3);
 display:flex;
 align-items:center;
 justify-content:center;
+z-index: 1050;
 #modal{
     background: var(--blueGreen-opacity);
     border-radius: 0.2rem;
@@ -80,12 +81,12 @@ textarea{
 .button{
     font-weight: bold;
     margin-top: 0.5rem;
-    border: 2px solid var(--blueGreen);
+    border: 2px solid var(--blueGreen-opacity);
 }
 .button:hover{
     text-shadow: 3px 3px 3px black;
     color: var(--mainRed);
-    background: var(--blueGreen);
+    background: var(--blueGreen-opacity);
 }
 
 .my-btn{

@@ -44,6 +44,7 @@ background: rgba(0,0,0,0.3);
 display:flex;
 align-items:center;
 justify-content:center;
+z-index: 1050;
 #modal{
     background: var(--blueGreen-opacity);
     border-radius: 0.2rem;
