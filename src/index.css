@@ -49,7 +49,7 @@ h5 {
 
 .inbetween-line {
   border-top: 5px solid var(--blueGreen);
-  width: 50%;
+  width: 20%;
 }
 
 .partners {
@@ -57,3 +57,10 @@ h5 {
   font-weight: 600;
 }
 
+.info-item {
+}
+
+.sm-inbetween-line {
+  border-top: 5px solid var(--yellowGreen);
+  width: 5%;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
 import logo from '../public/img/logo-elevat.png';
+import {Link} from 'react-router-dom';
 
 export default class Navbar extends Component {
     constructor() {
@@ -71,21 +72,28 @@ export default class Navbar extends Component {
             <div id="container">
                 <NavWrapper className={this.state.hasScrolled ? 
                     'fixed-top navbar navbar-expand-sm navbar-dark' : 
-                    'static-top navbar navbar-expand-sm navbar-dark'}>
+                    'static-top no-op navbar navbar-expand-sm navbar-dark'}>
                     <div className="navbar-brand ml-2">
-                        <img src={logo} alt="logo" className="navbar-brand-img"/>
+                        <Link to="/">
+                            <img src={logo} alt="logo" className="navbar-brand-img"/>
+                        </Link>
+                    </div>
+                    <div className="about">
+                        <Link to="/about">
+                            <button className="button btn-about">
+                                About us</button></Link>
                     </div>
                     <ul className="navbar-nav align-items-center ml-auto">
                         <li className="text-capitalize nav-item ml-1">
-                            <a className="nav-link"><button className="button" onClick={()=> this.openModal()}>
-                                <i className="fas fa-edit" /></button></a></li>
+                            <button className="button" onClick={()=> this.openModal()}>
+                                <i className="fas fa-edit" /></button></li>
                         <li className="text-capitalize nav-item ml-1">
-                            <a className="nav-link"><button className="button" onClick={()=>this.openModalPhone()}>
-                                <i className="fas fa-phone" /></button></a></li>
-                        <li className="text-capitalize nav-item ml-0">
+                            <button className="button" onClick={()=>this.openModalPhone()}>
+                                <i className="fas fa-phone" /></button></li>
+                        <li className="text-capitalize nav-item ml-1">
                             <a className="nav-link" href="mailto:ydimitrov95@gmail.com?subject=Enquiry&body=Your message">
                                 <button className="button"  id="btnOutlook">
-                                    <i className="fas fa-envelope" /></button></a></li>
+                                <i className="fas fa-envelope" /></button></a></li>
                     </ul>
                 </NavWrapper>
             </div>
@@ -94,16 +102,18 @@ export default class Navbar extends Component {
 }
 
 const NavWrapper = styled.nav`
+    display:flex;
+    flex-direction: row !important;
     .button {
         border-radius: 0.5rem;
         background: none;
         border: none;
-        text-transform: uppercase;
         color: black;
         font-weight: bold;
         outline: none;
-        animation: btn-show 3s;
-        animation-fill-mode: forwards;
+    }
+    .btn-about{
+        text-transfom: lowercase !important;
     }
     .button:hover {
         animation: text-jump 0.2s;
@@ -120,12 +130,12 @@ const NavWrapper = styled.nav`
         height: 3rem;
         animation: img-big 3s;
     }
-    &.static-top{
+    &.no-op{
         background: var(--blueGreen-lessopacity) !important;
         transition: 1s !important;
     }
     &.fixed-top{
-        background: var(--blueGreen-opacity) !important;
+        background: var(--blueGreen-opacity);
         transition: 1s !important;
     }
     @keyframes text-jump {
@@ -136,12 +146,16 @@ const NavWrapper = styled.nav`
         .navbar-nav {
             flex-direction: row !important;
         }
+        & > * {
+            display:inline-flex;
+            flex-direction: row;
+        }
+        li {
+            margin-left: 0;
+        }
     }
     @keyframes btn-show {
         from {opacity: 0;} to {opacity: 1;}
-    }
-    @keyframes i-big {
-        from {font-size:3rem;} to {font-size:2rem;}
     }
     @keyframes img-big {
         from {width:5rem; height:5rem;} to {width:3rem; height:3rem;}

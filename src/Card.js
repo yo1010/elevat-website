@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default class Cards extends Component {
     render() {
         return (
-            <div className="row">
+            <div className="row mt-5">
                 <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
                     <div className="card">
                         <div className="card-header">

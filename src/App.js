@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Navbar from './Navbar';
@@ -8,6 +7,8 @@ import Info from './Info';
 import Cards from './Card';
 import ModalMail from './Modal';
 import ModalPhone from './ModalPhone';
+import {Switch, Route} from  'react-router-dom';
+import About from './About';
 
 class App extends Component {
   constructor() {
@@ -46,13 +47,18 @@ class App extends Component {
     return (
         <React.Fragment>
           <Navbar modalCallback1={this.getModal} modalCallback2={this.getModalPhone}/>
-          <Intro />
-          <Info />
-          <Cards />
-          {this.state.modalOpenData == true && 
+          <Switch>
+            <Route exact path="/">
+              <Intro/>
+              <Info/>
+              <Cards/>
+            </Route>
+            <Route path="/about" component={About}/>
+          </Switch>
+          {this.state.modalOpenData === true && 
           <ModalMail />
           }
-          {this.state.modalOpenPhoneData == true && 
+          {this.state.modalOpenPhoneData === true && 
           <ModalPhone />
           }
         </React.Fragment>
