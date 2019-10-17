@@ -77,8 +77,6 @@ export default class Navbar extends Component {
                     </div>
                     <ul className="navbar-nav align-items-center ml-auto">
                         <li className="text-capitalize nav-item ml-1">
-                            <a className="nav-link"><button className="static">contact us</button></a></li>
-                        <li className="text-capitalize nav-item ml-1">
                             <a className="nav-link"><button className="button" onClick={()=> this.openModal()}>
                                 <i className="fas fa-edit" /></button></a></li>
                         <li className="text-capitalize nav-item ml-1">
@@ -110,17 +108,6 @@ const NavWrapper = styled.nav`
         height: 3rem;
         color: var(--mainRed);
         text-shadow: 3px 3px 5px black;
-    }
-    .static {
-        color: var(--mainRed) !important;
-        cursor: default;
-        border-radius: 0.5rem;
-        background: none;
-        border: none;
-        text-transform: uppercase;
-        color: black;
-        font-weight: 300 !important;
-        outline: none;
     }
     i {
         font-size: 2rem;
