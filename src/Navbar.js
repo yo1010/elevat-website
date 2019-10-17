@@ -102,6 +102,8 @@ const NavWrapper = styled.nav`
         color: black;
         font-weight: bold;
         outline: none;
+        animation: btn-show 3s;
+        animation-fill-mode: forwards;
     }
     .button:hover {
         animation: text-jump 0.2s;
@@ -111,10 +113,12 @@ const NavWrapper = styled.nav`
     }
     i {
         font-size: 2rem;
+        animation: i-big 3s;
     }
     .navbar-brand-img{
         width: 3rem;
         height: 3rem;
+        animation: img-big 3s;
     }
     &.static-top{
         background: var(--blueGreen-lessopacity) !important;
@@ -132,5 +136,14 @@ const NavWrapper = styled.nav`
         .navbar-nav {
             flex-direction: row !important;
         }
+    }
+    @keyframes btn-show {
+        from {opacity: 0;} to {opacity: 1;}
+    }
+    @keyframes i-big {
+        from {font-size:3rem;} to {font-size:2rem;}
+    }
+    @keyframes img-big {
+        from {width:5rem; height:5rem;} to {width:3rem; height:3rem;}
     }
 `

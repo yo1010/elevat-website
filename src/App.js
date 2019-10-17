@@ -5,7 +5,7 @@ import './App.css';
 import Navbar from './Navbar';
 import Intro from './Intro';
 import Info from './Info';
-import Card from './Card';
+import Cards from './Card';
 import ModalMail from './Modal';
 import ModalPhone from './ModalPhone';
 
@@ -48,7 +48,7 @@ class App extends Component {
           <Navbar modalCallback1={this.getModal} modalCallback2={this.getModalPhone}/>
           <Intro />
           <Info />
-          <Card />
+          <Cards />
           {this.state.modalOpenData == true && 
           <ModalMail />
           }
