@@ -7,8 +7,8 @@ export default class Card extends Component {
             <div className="row">
                 <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
                     <div className="card">
-                        <span className="partners"><i className="far fa-caret-square-down" /></span>
                         <div className="card-header">
+                            <span className="partners"><i className="far fa-caret-square-down" /></span>
                             <h4>Corporate Law:</h4>
                         </div>
                         <div className="info">
@@ -27,8 +27,8 @@ export default class Card extends Component {
                 </ProductWrapper>
                 <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
                     <div className="card">
-                        <span className="partners"><i className="far fa-caret-square-down" /></span>
                         <div className="card-header">
+                            <span className="partners"><i className="far fa-caret-square-down" /></span>
                             <h4>Contract & Labour law:</h4>
                         </div>
                         <div className="info">
@@ -43,8 +43,8 @@ export default class Card extends Component {
                 </ProductWrapper>
                 <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
                     <div className="card">
-                        <span className="partners"><i className="far fa-caret-square-down" /></span>
                         <div className="card-header">
+                            <span className="partners"><i className="far fa-caret-square-down" /></span>
                             <h4>Legal advice on Intellectual property & protection:</h4>
                         </div>
                         <div className="info">
@@ -55,8 +55,9 @@ export default class Card extends Component {
                 </ProductWrapper>
                 <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
                     <div className="card">
-                        <span className="partners"><i className="far fa-caret-square-down" /></span>
                         <div className="card-header">
+                            <div className="iconWrapper"><span className="partners">
+                                <i className="far fa-caret-square-down" /></span></div>   
                             <h4>Full Legal services re: PUBLIC PROCUREMENT PROCEDURES incl:</h4>
                         </div>
                         <div className="info">
@@ -91,11 +92,12 @@ const ProductWrapper = styled.div`
         background: none;
         transition: all 0.5s linear;
         border: none;
+        border-top-radius: 0.5rem;
+        text-align: center;
     }
     &:hover{
         .card{
-            border: 2px solid var(--blueGreen);
-            border-top: 15px solid var(--blueGreen);
+            border: none;
             box-shadow:2px 2px 5px 0px rgba(0,0,0,0.2);
             h4{
                 color: var(--yellowGreen);
@@ -115,11 +117,9 @@ const ProductWrapper = styled.div`
     .info {
         display: none;
     }
-    .partners {
-        align-self: center;
-    }
     i {
         font-size: 2rem;
+        align-self: center;
     }
     .green {
         color: var(--yellowGreen)
