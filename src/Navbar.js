@@ -118,11 +118,11 @@ const NavWrapper = styled.nav`
     }
     &.static-top{
         background: var(--blueGreen-lessopacity) !important;
-        transition: 1s;
+        transition: 1s !important;
     }
     &.fixed-top{
         background: var(--blueGreen-opacity) !important;
-        transition: 1s;
+        transition: 1s !important;
     }
     @keyframes text-jump {
         from { transform: translate(0px, 0px); }
