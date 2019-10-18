@@ -141,6 +141,10 @@ const NavWrapper = styled.nav`
         font-weight: bold;
         outline: none;
     }
+    button {
+        animation: btn-show 3s;
+        animation-timing-frame: ease-out;
+    }
     .btn-about{
         text-transfom: lowercase !important;
         font-family: 'Staatliches', sans-serif;
@@ -162,7 +166,6 @@ const NavWrapper = styled.nav`
     .navbar-brand-img{
         width: 3rem;
         height: 3rem;
-        animation: img-big 3s;
     }
     &.no-op{
         background: var(--blueGreen-lessopacity) !important;
@@ -218,8 +221,5 @@ const NavWrapper = styled.nav`
     }
     @keyframes btn-show {
         from {opacity: 0;} to {opacity: 1;}
-    }
-    @keyframes img-big {
-        from {width:5rem; height:5rem;} to {width:3rem; height:3rem;}
     }
 `
