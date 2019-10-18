@@ -18,6 +18,9 @@ export default class Intro extends Component {
 
 const ImgWrapper = styled.div`
     position:relative;
+    background: rgba(0,0,0,0.9);
+    z-index: 1;
+    box-shadow: 0px 4px 3px -3px #000000;
     .centered{
         position: absolute;
         top: 40%;
@@ -25,6 +28,11 @@ const ImgWrapper = styled.div`
         transform: translate(-50%, -50%);
         text-align: center;
         animation: text-move 2s;
+        z-index: 2;
+    }
+    img{
+        filter: grayscale(40%) brightness(70%);
+        z-index: 0;
     }
     .under{
         position: absolute;
@@ -36,15 +44,20 @@ const ImgWrapper = styled.div`
         animation: fade-in 2s ease-in 1s;
         opacity: 0;
         animation-fill-mode: forwards;
-        width:100%
+        width:100%;
+        z-index: 2;
+    }
+    .under > * {
+        font-family: 'Abel', sans-serif;
     }
     h1 {
         color: var(--greenBlue);
-        text-shadow: 2px 2px 2px black;
+        text-shadow: 2px 2px 2px grey;
         text-transform: uppercase;
         font-weight: 400;
         animation: fade-in;
         animation-duration: 2s;
+        font-family: 'Staatliches', sans-serif;
     }
     span {
         margin-left: 0.5rem;
@@ -57,7 +70,7 @@ const ImgWrapper = styled.div`
         border: none;
         color: var(--mainRed);
         text-shadow: 2px 2px 2px black;
-        width:100%;
+        outline: none;
     }
     button:hover {
         color: var(--blueGreen);
@@ -70,7 +83,7 @@ const ImgWrapper = styled.div`
     }
     @media (min-width: 1024px) {
         h1{
-            font-size:3rem;
+            font-size:4rem;
             animation: text-enlarge-lg 2s;
         }
         i{
@@ -85,7 +98,7 @@ const ImgWrapper = styled.div`
             animation: text-enlarge-sm 2s;
         }
         h1{
-            font-size:1.5rem;
+            font-size:2rem;
         }
         i{
             font-size:1.5rem;
@@ -94,9 +107,14 @@ const ImgWrapper = styled.div`
             font-size:1.5rem;
         }
     }
+    @media (max-width: 500px) {
+        h1{
+            font-size:1.5rem;
+        }
+    }
     @keyframes fade-in { from { opacity:0; } to { opacity:1; } }
-    @keyframes text-enlarge-lg {from {font-size: 1rem;} to {font-size: 3rem;}}
-    @keyframes text-enlarge-sm {from {font-size: 0.5rem;} to {font-size: 1.5rem;}}
+    @keyframes text-enlarge-lg {from {font-size: 1rem;} to {font-size: 4rem;}}
+    @keyframes text-enlarge-sm {from {font-size: 0.5rem;} to {font-size: 2rem;}}
     @keyframes text-move {from {top: 70%;} to {top:40%;}}
     @keyframes text-move1 {from {top: 70%;} to {top:55%;}}
     @keyframes text-jump {

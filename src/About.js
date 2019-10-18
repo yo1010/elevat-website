@@ -4,7 +4,12 @@ export default function About() {
     return (
         <div>
             <div className="achievements">
-                <h4> Achievements: </h4>
+                    <div className="sub-title">
+                        <h3>
+                            achievements:
+                        </h3>
+                    </div>
+                    <div className="inbetween-line mx-auto"></div>
                 <h5>
                     Some of the achievements of our team are participation in the privatization the biggest
                     enterprises in Bulgaria – manufacturers, wholesalers and retailers in the food and

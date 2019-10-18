@@ -14,15 +14,20 @@ export default class ModalPhone extends Component {
                                 <div className="info">
                                     <div className="fax">
                                         <span className="partners">Fax:</span> 
-                                        <div className="numbers">+0035988821375</div>
+                                        <div className="numbers"><a href="tel:+359888324593">
+                                            +35988821375</a></div>
                                     </div>
                                     <div className="mobile">
                                         <span className="partners">Mobile:</span>
-                                        <div className="numbers">+0035988821375</div>
+                                        <div className="numbers">
+                                            <a href="tel:+3598883213214">
+                                                +35988821375</a></div>
                                     </div>
                                     <div className="landline">
                                         <span className="partners">Landline:</span>
-                                        <div className="numbers">+0035929593567</div>
+                                        <div className="numbers">
+                                            <a href="tel:+3598883213214">
+                                                +35988821375</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -113,5 +118,16 @@ i {
 .numbers {
     background: lightgrey;
     border-radius: 2rem;
+}
+
+a{
+    margin-top: 1px;
+    text-decoration: none;
+    color: var(--mainRed);
+}
+a:hover{
+    color: black;
+    font-size: 1.5rem;
+    transition: 1s;
 }
 `

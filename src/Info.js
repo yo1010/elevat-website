@@ -4,7 +4,7 @@ export default function Info() {
     return (
         <React.Fragment>
                 <div className="body">
-                    <div className="sub-title mt-5">
+                    <div className="sub-title">
                         <h3>
                             Business Law Firm of Attorneys, Solicitors & Lawyers - Sofia,Bulgaria
                         </h3>
@@ -23,7 +23,7 @@ export default function Info() {
                                 <span className="company-name">ELEVAT LTD. LEGAL HOUSE</span> team consists of highly qualified professional lawyers, 
                                 graduates of the most prestigious institutions in Bulgaria, having sustainable local and international professional
                                 background and experience. 
-                                <p>
+                                <p className="paragraph">
                                     Our lawyers are holders of Master degrees in International
                                     Law & Relations, Public Administration & Litigation, fluent in English, German & Russian
                                     languages.We aim to invest our utmost efforts to satisfy our clients’ requirements with accuracy,
@@ -44,7 +44,7 @@ export default function Info() {
                                 In 1998, for a period of a couple of years, we were appointed and acted as an
                                 authorized official “privatization agent” of the Sofia Municipal Privatization Agency,
                                 involved in a number of significant privatization procedures.
-                                <p>
+                                <p className="paragraph">
                                     Our experience in the process of private acquisition of state and municipal
                                     enterprises includes specialized legal services such as: preparation of
                                     thorough legal analysis of the entities, evaluations, legal check on privatization
@@ -53,10 +53,12 @@ export default function Info() {
                             </h5>
                         </div>
                     </div>
-                <div className="inbetween-line mx-auto my-5"></div>
-                    <h3>
-                        Services and Practice Areas
-                    </h3>
+                <div className="inbetween-line mx-auto mt-5"></div>
+                    <div className="sub-title">
+                        <h3>
+                            Services & Practice Areas
+                        </h3>
+                    </div>
             </div>
         </React.Fragment>
     )

@@ -93,6 +93,7 @@ const ProductWrapper = styled.div`
         transition: all 0.5s linear;
         border: none;
         border-top-radius: 0.5rem;
+        border-top: solid var(--blueGreen);
         text-align: center;
     }
     &:hover{
