@@ -72,8 +72,13 @@ h5 {
 .sub-title {
   padding: 2rem;
   background: rgba(141, 139, 139, 0.1);
+  border-top: none;
 }
 
 .brand-name{
   color: black;
+}
+
+.about-container {
+  margin-top: 4rem;
 }

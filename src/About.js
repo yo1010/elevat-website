@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function About() {
     return (
-        <div>
+        <div className="about-container">
             <div className="sub-title">
                         <h3>
                             achievements:

@@ -93,7 +93,7 @@ export default class Navbar extends Component {
             <div id="container">
                 <NavWrapper className={this.state.hasScrolled ? 
                     'fixed-top navbar navbar-expand-sm navbar-dark' : 
-                    'static-top no-op navbar navbar-expand-sm navbar-dark'}>
+                    'fixed-top no-op navbar navbar-expand-sm navbar-dark'}>
                     <div className="navbar-brand ml-2">
                         <Link to="/">
                             <img src={logo} alt="logo" className="navbar-brand-img"/>
@@ -168,7 +168,7 @@ const NavWrapper = styled.nav`
         height: 3rem;
     }
     &.no-op{
-        background: var(--blueGreen-lessopacity) !important;
+        background: var(--blueGreen) !important;
         transition: 1s !important;
     }
     .navbar-collapse{

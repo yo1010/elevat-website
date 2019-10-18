@@ -10,12 +10,13 @@ export default class Cards extends Component {
                         Services & Practice Areas
                     </h3>
                 </div>
+                <div className="inbetween-line mx-auto mb-5"></div>
                 <div className="row mt-5">
                     <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
                         <div className="card">
                             <div className="card-header">
                                 <span className="partners"><i className="far fa-caret-square-down" /></span>
-                                <h4>Corporate Law:</h4>
+                                <h4>Corporate Law</h4>
                             </div>
                             <div className="info">
                                 <p>- Registration of companies and associations 
@@ -35,7 +36,7 @@ export default class Cards extends Component {
                         <div className="card">
                             <div className="card-header">
                                 <span className="partners"><i className="far fa-caret-square-down" /></span>
-                                <h4>Contract & Labour law:</h4>
+                                <h4>Contract & Labour law</h4>
                             </div>
                             <div className="info">
                                 <p>- Preparation of all kinds of named and unnamed agreements, responding to the interests and
@@ -51,11 +52,15 @@ export default class Cards extends Component {
                         <div className="card">
                             <div className="card-header">
                                 <span className="partners"><i className="far fa-caret-square-down" /></span>
-                                <h4>Legal advice on Intellectual property & protection:</h4>
+                                <h4>Legal advice on Intellectual property &
+                                    <p className="paragraph2">Construction Agreements</p></h4>
                             </div>
                             <div className="info">
                                 <p>- Protection and conceding of copyrights</p>
                                 <p>- Registration of trademarks and industrial samples</p>
+                                <p className="mt-5">- Preparation & consulting of CONSTRUCTION Agreements as per the Bulgarian Law, FIDIC
+                                    Conditions of Contracts ect, Project, Design & Construction Contracts in specific business
+                                    areas: gas pipelining & gas pipeline repairing, WWTP (wastewater treatment plants) ect</p>
                             </div>
                         </div>
                     </ProductWrapper>
@@ -64,7 +69,7 @@ export default class Cards extends Component {
                             <div className="card-header">
                                 <div className="iconWrapper"><span className="partners">
                                     <i className="far fa-caret-square-down" /></span></div>   
-                                <h4>Full Legal services re: PUBLIC PROCUREMENT PROCEDURES incl:</h4>
+                                <h4>Full Legal services re: PUBLIC PROCUREMENT PROCEDURES</h4>
                             </div>
                             <div className="info">
                                 <p>- Preparation of Tender documentation with regards to participation in Public Procurement</p>
@@ -74,9 +79,6 @@ export default class Cards extends Component {
                                     Venture Agreements, Public Procurement Agreements)</p>
                                 <p>- Representation and consultings in negotiations and meetings</p>
                                 <p>- Disputes, Claims, Appeal before the Competition Protection Commission. Court Procedures ect</p>
-                                <span className="green"><p>- Preparation & consulting of CONSTRUCTION Agreements as per the Bulgarian Law, FIDIC
-                                    Conditions of Contracts ect, Project, Design & Construction Contracts in specific business
-                                    areas: gas pipelining & gas pipeline repairing, WWTP (wastewater treatment plants) ect</p></span>
                             </div>
                         </div>
                     </ProductWrapper>
@@ -95,12 +97,15 @@ const ProductWrapper = styled.div`
         margin-left: 0.5px;
         margin-right: 0.5px;
         background: none;
+        margin-right: 1rem;
+        margin-left: 1rem;
     }
     .card-header{
         background: none;
         transition: all 0.5s linear;
         border: none;
-        border-top-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        border-top-left-radius: 0.5rem;
         border-top: solid var(--blueGreen);
         text-align: center;
     }
@@ -132,5 +137,8 @@ const ProductWrapper = styled.div`
     }
     .green {
         color: var(--yellowGreen)
+    }
+    .paragraph2 {
+        font-size: 1.5rem;
     }
 `
