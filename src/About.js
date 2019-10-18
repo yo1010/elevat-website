@@ -3,13 +3,13 @@ import React from 'react'
 export default function About() {
     return (
         <div>
-            <div className="achievements">
-                    <div className="sub-title">
+            <div className="sub-title">
                         <h3>
                             achievements:
                         </h3>
-                    </div>
-                    <div className="inbetween-line mx-auto"></div>
+            </div>
+            <div className="inbetween-line mx-auto"></div>
+            <div className="achievements col-7 mx-auto">
                 <h5>
                     Some of the achievements of our team are participation in the privatization the biggest
                     enterprises in Bulgaria – manufacturers, wholesalers and retailers in the food and
@@ -38,16 +38,16 @@ export default function About() {
                     “Chistota – Sofia” AD - Bulgaria, JTI Ltd,</span> as well as non – profit juridical persons -
                     foundations, associations, ecology, conservation and research organization.
                 </h5>
-            </div>
-            <h5>
-                Being a legal advisor of some of the oldest project and construction companies in
-                Bulgaria, we have now accrued profound professional knowledge and experience in
-                construction agreements, /inclusive of the specific construction conditions, established
-                by the Fédération Internationale Des Ingénieurs-Conseils /FIDIC/; assisted the preparation
-                of public tender dossiers, consortium agreements and other documentation for many of the
-                biggest public procurement contracts, some of which successfully awarded to our corporate
-                Clients.
-            </h5>    
+                <h5>
+                    Being a legal advisor of some of the oldest project and construction companies in
+                    Bulgaria, we have now accrued profound professional knowledge and experience in
+                    construction agreements, /inclusive of the specific construction conditions, established
+                    by the Fédération Internationale Des Ingénieurs-Conseils /FIDIC/; assisted the preparation
+                    of public tender dossiers, consortium agreements and other documentation for many of the
+                    biggest public procurement contracts, some of which successfully awarded to our corporate
+                    Clients.
+                </h5>  
+            </div>  
         </div>
     )
 }

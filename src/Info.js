@@ -4,9 +4,10 @@ export default function Info() {
     return (
         <React.Fragment>
                 <div className="body">
+                    <div className="inbetween-line mx-auto mt-5"></div>
                     <div className="sub-title">
                         <h3>
-                            Business Law Firm of Attorneys, Solicitors & Lawyers - Sofia,Bulgaria
+                            History of <span className="brand-name">ELEVAT</span> LEGAL HOUSE
                         </h3>
                     </div>
                     <div className="row mx-2">
@@ -52,12 +53,6 @@ export default function Info() {
                                 </p>
                             </h5>
                         </div>
-                    </div>
-                <div className="inbetween-line mx-auto mt-5"></div>
-                    <div className="sub-title">
-                        <h3>
-                            Services & Practice Areas
-                        </h3>
                     </div>
             </div>
         </React.Fragment>

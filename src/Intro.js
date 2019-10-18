@@ -6,8 +6,8 @@ export default class Intro extends Component {
     render() {
         return (
             <ImgWrapper className="img-container center">
-                <div className="centered"><h1>Elevat Legal House</h1></div>
-                <div className="under"><button><i className="fas fa-mobile-alt"></i><a href="tel:+359888000000"><span>+359888000000</span></a></button></div>
+                <div className="centered"><h1><span className="brand-name">Elevat</span>Legal House</h1></div>
+                <div className="under"><button><i className="fas fa-mobile-alt"></i><a href="tel:+359888000000"><span className="phone">+359888000000</span></a></button></div>
                 <img src={img} alt="legal-office-work" 
                 className="img-fluid max-width:100% height:auto"/>
             </ImgWrapper>                
@@ -29,6 +29,7 @@ const ImgWrapper = styled.div`
         text-align: center;
         animation: text-move 2s;
         z-index: 2;
+        color: var(--mainRed);
     }
     img{
         filter: grayscale(40%) brightness(70%);
@@ -51,38 +52,50 @@ const ImgWrapper = styled.div`
         font-family: 'Abel', sans-serif;
     }
     h1 {
-        color: var(--greenBlue);
-        text-shadow: 2px 2px 2px grey;
+        text-shadow: 1px 1px 3px lightgrey;
         text-transform: uppercase;
         font-weight: 400;
         animation: fade-in;
         animation-duration: 2s;
         font-family: 'Staatliches', sans-serif;
     }
-    span {
-        margin-left: 0.5rem;
-        color: var(--mainRed);
+    .brand-name{
+        margin-right: 0.3rem;
+        text-shadow: 1px 1px 3px lightgrey;
+        text-transform: uppercase;
+        font-weight: 400;
+        animation: fade-in;
+        animation-duration: 2s;
+        font-family: 'Staatliches', sans-serif;
+    }
+    .phone {
+        margin-left: 0.3rem;
+        color: var(--blueGreen);
         text-shadow: 2px 2px 2px black;
     }
     button {
         padding: 0.5rem;
         background: transparent;
         border: none;
-        color: var(--mainRed);
+        color: var(--blueGreen);
         text-shadow: 2px 2px 2px black;
         outline: none;
     }
     button:hover {
-        color: var(--blueGreen);
+        color: var(--mainRed);
         text-shadow: 2px 2px 2px black;
         animation: text-jump 0.2s;
         animation-iteration-count: 3;
         span {
-            color: var(--blueGreen);
+            color: var(--mainRed);
         }
     }
     @media (min-width: 1024px) {
         h1{
+            font-size:4rem;
+            animation: text-enlarge-lg 2s;
+        }
+        .brand-name{
             font-size:4rem;
             animation: text-enlarge-lg 2s;
         }
@@ -100,6 +113,9 @@ const ImgWrapper = styled.div`
         h1{
             font-size:2rem;
         }
+        .brand-name{
+            font-size:2rem;
+        }
         i{
             font-size:1.5rem;
         }
@@ -109,6 +125,9 @@ const ImgWrapper = styled.div`
     }
     @media (max-width: 500px) {
         h1{
+            font-size:1.5rem;
+        }
+        .brand-name{
             font-size:1.5rem;
         }
     }

@@ -125,9 +125,13 @@ a{
     text-decoration: none;
     color: var(--mainRed);
 }
+@media (min-width: 500px) {
+    a:hover{
+        font-size: 1.5rem;
+    }
+}
 a:hover{
     color: black;
-    font-size: 1.5rem;
     transition: 1s;
 }
 `

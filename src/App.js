@@ -26,7 +26,10 @@ class App extends Component {
     this.setState(() => {return{modalOpenPhoneData:modalOpenPhone}})
   }
   handleClick(e) {
-        if (e.target.className === "fas fa-times-circle") {
+        if ((e.target.className === "fas fa-times-circle") || 
+        (e.target.className === "row") || (e.target.className === "sc-bxivhb rAIF") || 
+        (e.target.className === "sc-bdVaJa iMypiN fixed-top navbar navbar-expand-sm navbar-dark") ||
+        (e.target.className === "sc-ifAKCX EDYup")){
           this.setState(() => {
             return{
               modalOpenData: false,
@@ -50,8 +53,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/">
               <Intro/>
-              <Info/>
               <Cards/>
+              <Info/>
             </Route>
             <Route path="/about" component={About}/>
           </Switch>

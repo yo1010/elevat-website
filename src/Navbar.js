@@ -15,7 +15,7 @@ export default class Navbar extends Component {
         this.handleScroll = this.handleScroll.bind(this);
         this.openModal = this.openModal.bind(this);
         this.openModalPhone = this.openModalPhone.bind(this);
-        this.handleToggle = this.handleToggle.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     passModal = () => {
@@ -59,26 +59,34 @@ export default class Navbar extends Component {
             this.passModalPhone()
         })
     }
-    handleToggle() {
-        if (this.state.toggle === false) {
+    handleClick(e) {
+        let stateToggle = this.state.toggle;
+        if ((e.target.className === "fas fa-bars") || (e.target.className === "navbar-toggler")) {
             this.setState(() => {
-                return {toggle: true}
-            })
-        } else {
-            this.setState(() => {
-                return {toggle: false}
+                return{
+                    toggle: true
+                }
             })
         }
+        if (stateToggle === true) { 
+            this.setState(() => {
+                return{
+                    toggle: false
+                }
+            })
+            }
     }
     
     componentDidMount() {
         // Listen on scrolling event, call our function.
-        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('scroll', this.handleScroll); 
+        window.addEventListener('click', this.handleClick);
     }
     
     componentWillUnmount() {
         // Unlisten if the component unmounts.
         window.removeEventListener('scroll', this.handleScroll);
+        window.addEventListener('click', this.handleClick);
     }
     render() {
         return (
@@ -96,7 +104,7 @@ export default class Navbar extends Component {
                             <button className="button btn-about">
                                 About us</button></Link>
                     </div>
-                    <button class="navbar-toggler" type="button" onClick={() => this.handleToggle()} data-target="#navbarSupportedContent" 
+                    <button class="navbar-toggler" type="button" data-target="#navbarSupportedContent" 
                     aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i className="fas fa-bars"></i>
                     </button> 
