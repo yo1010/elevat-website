@@ -199,7 +199,6 @@ const ImgWrapper = styled.div`
         animation: fade-in;
         animation-duration: 2s;
         font-family: 'Staatliches', sans-serif;
-        text-shadow: 2px 2px 2px white;
     }
     }
     .brand-name{
@@ -209,7 +208,6 @@ const ImgWrapper = styled.div`
         animation: fade-in;
         animation-duration: 2s;
         font-family: 'Staatliches', sans-serif;
-        text-shadow: 2px 2px 2px white;
     }
     .phone {
         margin-left: 0.3rem;
@@ -237,10 +235,12 @@ const ImgWrapper = styled.div`
         h1{
             font-size:4rem;
             animation: text-enlarge-lg 2s;
+            text-shadow: 2px 2px 2px white;
         }
         .brand-name{
             font-size:4rem;
             animation: text-enlarge-lg 2s;
+            text-shadow: 2px 2px 2px white;
         }
         i{
             font-size:3rem;
@@ -253,10 +253,12 @@ const ImgWrapper = styled.div`
         h1{
             font-size:2rem;
             animation: text-enlarge-sm 2s;
+            text-shadow: 1px 1px 1px white;
         }
         .brand-name{
             font-size:2rem;
             animation: text-enlarge-sm 2s;
+            text-shadow: 1px 1px 1px white;
         }
         i{
             font-size:1.5rem;
@@ -271,9 +273,11 @@ const ImgWrapper = styled.div`
         }
         h1{
             font-size:1.5rem;
+            text-shadow: 1px 1px 0.5px white;
         }
         .brand-name{
             font-size:1.5rem;
+            text-shadow: 1px 1px 0.5px white;
         }
         span {
             font-size:1rem;
