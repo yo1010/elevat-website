@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import img from '../public/img/office-work.jpg';
 import img1 from '../public/img/document.jpg';
-import img2 from '../public/img/desk-work.jpg';
-import img3 from '../public/img/signature.jpg';
+import img2 from '../public/img/signature.jpg';
+import img3 from '../public/img/desk-work.jpg';
 import styled from "styled-components";
 
 export default class Intro extends Component {
