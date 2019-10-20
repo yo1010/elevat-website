@@ -272,6 +272,12 @@ const ImgWrapper = styled.div`
         .brand-name{
             font-size:1.5rem;
         }
+        span {
+            font-size:1rem;
+        }
+        i{
+            font-size:1rem;
+        }
     }
     @keyframes fade-in { from { opacity:0; } to { opacity:1; } }
     @keyframes text-enlarge-lg {from {font-size: 1rem;} to {font-size: 4rem;}}
