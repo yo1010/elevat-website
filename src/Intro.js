@@ -199,6 +199,8 @@ const ImgWrapper = styled.div`
         animation: fade-in;
         animation-duration: 2s;
         font-family: 'Staatliches', sans-serif;
+        text-shadow: 2px 2px 2px white;
+    }
     }
     .brand-name{
         margin-right: 0.3rem;
@@ -207,6 +209,7 @@ const ImgWrapper = styled.div`
         animation: fade-in;
         animation-duration: 2s;
         font-family: 'Staatliches', sans-serif;
+        text-shadow: 2px 2px 2px white;
     }
     .phone {
         margin-left: 0.3rem;
