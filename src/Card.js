@@ -91,7 +91,7 @@ export default class Cards extends Component {
 
 const ProductWrapper = styled.div`
     .card{
-        border-radius: 0.5rem;
+        border-radius: 0.2rem;
         transition:all 0.5s linear;
         border: transparent;
         margin-left: 0.5px;
@@ -104,8 +104,8 @@ const ProductWrapper = styled.div`
         background: none;
         transition: all 0.5s linear;
         border: none;
-        border-top-right-radius: 0.5rem;
-        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.2rem;
+        border-top-left-radius: 0.2rem;
         border-top: solid var(--blueGreen);
         text-align: center;
     }

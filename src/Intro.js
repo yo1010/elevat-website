@@ -50,8 +50,6 @@ export default class Intro extends Component {
         return (
             <ImgWrapper className="img-container center">
                 <div className="centered"><h1><span className="brand-name">Elevat</span>Legal House</h1></div>
-                <div className="under"><button className="btn-phone"><i className="fas fa-mobile-alt"></i>
-                <a href="tel:+359888000000"><span className="phone">+359888000000</span></a></button></div>
                 <div className={this.state.slideIndex === 0 ? "fade" : "d-none fade"}>
                     <div className="numbertext"></div>
                     <img src={img} alt="legal-office-work" 
@@ -99,7 +97,7 @@ const ImgWrapper = styled.div`
     .btn-slide {
         cursor: pointer;
         position: absolute;
-        top:35%;
+        top:40%;
         color: black;
         font-weight: bold;
         transition: 0.6s ease;
@@ -164,7 +162,7 @@ const ImgWrapper = styled.div`
     }
     .centered{
         position: absolute;
-        top: 40%;
+        top: 46%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
@@ -176,22 +174,6 @@ const ImgWrapper = styled.div`
     img{
         filter: grayscale(40%) brightness(70%);
         z-index: 0;
-    }
-    .under{
-        position: absolute;
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        animation: text-move1 2s ease-in 2s;
-        animation: fade-in 2s ease-in 1s;
-        opacity: 0;
-        animation-fill-mode: forwards;
-        width:60%;
-        z-index: 2;
-    }
-    .under > * {
-        font-family: 'Abel', sans-serif;
     }
     h1 {
         text-transform: uppercase;
@@ -209,28 +191,6 @@ const ImgWrapper = styled.div`
         animation-duration: 2s;
         font-family: 'Staatliches', sans-serif;
     }
-    .phone {
-        margin-left: 0.3rem;
-        color: var(--blueGreen);
-        text-shadow: 2px 2px 2px black;
-    }
-    .btn-phone {
-        padding: 0.5rem;
-        background: transparent;
-        border: none;
-        color: var(--blueGreen);
-        text-shadow: 2px 2px 2px black;
-        outline: none;
-    }
-    .btn-phone:hover {
-        color: var(--mainRed);
-        text-shadow: 2px 2px 2px black;
-        animation: text-jump 0.2s;
-        animation-iteration-count: 3;
-        span {
-            color: var(--mainRed);
-        }
-    }
     @media (min-width: 1024px) {
         h1{
             font-size:4rem;
@@ -242,29 +202,20 @@ const ImgWrapper = styled.div`
             animation: text-enlarge-lg 2s;
             text-shadow: 2px 2px 2px white;
         }
-        i{
-            font-size:3rem;
-        }
-        span {
-            font-size:3rem;
-        }
     }
     @media (max-width: 1024px) {
         h1{
-            font-size:2rem;
-            animation: text-enlarge-sm 2s;
+            font-size:3rem;
+            animation: text-enlarge-md 2s;
             text-shadow: 1px 1px 1px white;
         }
         .brand-name{
-            font-size:2rem;
-            animation: text-enlarge-sm 2s;
+            font-size:3rem;
+            animation: text-enlarge-md 2s;
             text-shadow: 1px 1px 1px white;
         }
-        i{
-            font-size:1.5rem;
-        }
-        span {
-            font-size:1.5rem;
+        .btn-slide {
+            top:35%;
         }
     }
     @media (max-width: 500px) {
@@ -272,25 +223,24 @@ const ImgWrapper = styled.div`
             display: none;
         }
         h1{
-            font-size:1.5rem;
+            font-size:2rem;
             text-shadow: 1px 1px 0.5px white;
+            animation: text-enlarge-sm 2s;
         }
         .brand-name{
-            font-size:1.5rem;
+            font-size:2rem;
             text-shadow: 1px 1px 0.5px white;
+            animation: text-enlarge-sm 2s;
         }
-        span {
-            font-size:1rem;
-        }
-        i{
-            font-size:1rem;
+        .btn-slide {
+            top:30%;
         }
     }
     @keyframes fade-in { from { opacity:0; } to { opacity:1; } }
     @keyframes text-enlarge-lg {from {font-size: 1rem;} to {font-size: 4rem;}}
-    @keyframes text-enlarge-sm {from {font-size: 0.5rem;} to {font-size: 2rem;}}
-    @keyframes text-move {from {top: 70%;} to {top:40%;}}
-    @keyframes text-move1 {from {top: 70%;} to {top:55%;}}
+    @keyframes text-enlarge-sm {from {font-size: 1rem;} to {font-size: 2rem;}}
+    @keyframes text-enlarge-md {from {font-size: 1rem;} to {font-size: 3rem;}}
+    @keyframes text-move {from {top: 70%;} to {top:46%;}}
     @keyframes text-jump {
         from { transform: translate(0px, 0px); }
         to { transform: translate(0px, -3px); }

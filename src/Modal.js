@@ -84,9 +84,7 @@ textarea{
     border: 2px solid var(--blueGreen-opacity);
 }
 .button:hover{
-    text-shadow: 3px 3px 3px black;
     color: var(--mainRed);
-    background: var(--blueGreen-opacity);
 }
 
 .my-btn{

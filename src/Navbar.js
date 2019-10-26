@@ -141,10 +141,6 @@ const NavWrapper = styled.nav`
         font-weight: bold;
         outline: none;
     }
-    button {
-        animation: btn-show 3s;
-        animation-timing-frame: ease-out;
-    }
     .btn-about{
         text-transfom: lowercase !important;
         font-family: 'Staatliches', sans-serif;
@@ -218,8 +214,5 @@ const NavWrapper = styled.nav`
     @keyframes text-jump {
         from { transform: translate(0px, 0px); }
         to { transform: translate(0px, -3px); }
-    }
-    @keyframes btn-show {
-        from {opacity: 0;} to {opacity: 1;}
     }
 `
