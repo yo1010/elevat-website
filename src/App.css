@@ -1,7 +1,8 @@
 :root {
   --blueGreen: #288784;
   --yellowGreen: #50d1c4;
-  --mainRed: #de0400;
+  --mainRed: #c20805;
+  --darkRed: #c20805;
   --blueGreen-opacity: rgba(40, 135, 132, 0.7);
   --blueGreen-lessopacity: rgba(40, 135, 132, 0.9);
 }

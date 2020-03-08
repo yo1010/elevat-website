@@ -1,88 +1,18 @@
 import React, { Component } from 'react';
 import img from '../public/img/office-work.jpg';
-import img1 from '../public/img/document.jpg';
-import img2 from '../public/img/signature.jpg';
-import img3 from '../public/img/desk-work.jpg';
 import styled from "styled-components";
 
 export default class Intro extends Component {
-    constructor() {
-        super();
-        this.state = {
-            slideIndex: 0
-        };
-        this.plusSlides=this.plusSlides.bind(this);
-        this.minusSlides=this.minusSlides.bind(this);
-        this.currentSlide=this.currentSlide.bind(this);
-    }
-    plusSlides(n) {
-        let slideIndex = this.state.slideIndex;
-        if (slideIndex > 2) {
-            this.setState(() => {
-                return {slideIndex: 0}
-            })
-        } else {
-            this.setState(() => {
-                return {slideIndex: slideIndex + n}
-            })
-        }
-        console.log(slideIndex)
-    }
-    minusSlides(n) {
-        let slideIndex = this.state.slideIndex;
-        if (slideIndex < 1) {
-            this.setState(() => {
-                return {slideIndex: 3}
-            })
-        } else {
-            this.setState(() => {
-                return {slideIndex: slideIndex - n}
-            })
-        }
-        console.log(slideIndex)
-    }
-    currentSlide(n) {
-        this.setState(() => {
-            return {slideIndex: n}
-        })
-    }
     render() {
         return (
             <ImgWrapper className="img-container center">
-                <div className="centered"><h1><span className="brand-name">Elevat</span>Legal House</h1></div>
-                <div className={this.state.slideIndex === 0 ? "fade" : "d-none fade"}>
-                    <div className="numbertext"></div>
-                    <img src={img} alt="legal-office-work" 
-                    className="img-fluid max-width:100% height:auto"/>
+                <div>
+                    <img src={img} />
                 </div>
-                <div className={this.state.slideIndex === 1 ? "fade" : "d-none fade"}>
-                    <div className="numbertext"></div>
-                    <img src={img1} alt="document-sign" 
-                    className="img-fluid max-width:100% height:auto"/>
-                </div>
-                <div className={this.state.slideIndex === 2 ? "fade" : "d-none fade"}>
-                    <div className="numbertext"></div>
-                    <img src={img2} alt="desk-work" 
-                    className="img-fluid max-width:100% height:auto"/>
-                </div>
-                <div className={this.state.slideIndex === 3 ? "fade" : "d-none fade"}>
-                    <div className="numbertext"></div>
-                    <img src={img3} alt="desk-work" 
-                    className="img-fluid max-width:100% height:auto"/>
-                </div>
-                <button className="prev btn-slide" onClick={()=>this.minusSlides(1)}>
-                    <i className="fas fa-chevron-left arrow"></i></button>
-                <button className="next btn-slide" onClick={()=>this.plusSlides(1)}>
-                    <i className="fas fa-chevron-right arrow"></i></button>
-                <div className="dots">
-                    <span className={this.state.slideIndex === 0 ? "active dot" : "dot"} 
-                    onClick={()=>this.currentSlide(0)}></span>
-                    <span className={this.state.slideIndex === 1 ? "active dot" : "dot"} 
-                    onClick={()=>this.currentSlide(1)}></span>
-                    <span className={this.state.slideIndex === 2 ? "active dot" : "dot"} 
-                    onClick={()=>this.currentSlide(2)}></span>
-                    <span className={this.state.slideIndex === 3 ? "active dot" : "dot"} 
-                    onClick={()=>this.currentSlide(3)}></span>
+                <div className="centered">
+                    <div className="titleContainer mx-auto"></div><h5 className="title mx-auto">Elevat <span className="black">Legal House</span></h5>
+                    <p className="intro">a professional legal and consulting company with 17 years of
+                        practice in the provision of legal counseling and juridical advice</p>
                 </div>
             </ImgWrapper>                
         )
@@ -91,13 +21,53 @@ export default class Intro extends Component {
 
 
 const ImgWrapper = styled.div`
-    position:relative;
     z-index: 1;
-    margin-top: 4rem;
+    img {
+        height: 100vh;
+        width: 100%;
+    }
+    .black {
+        color: white;
+        border: none;
+        font-family: font-family: 'Staatliches', sans-serif;
+        text-shadow: 0px 1px 1px black;
+    }
+    .intro {
+        transform: translateY(30rem);
+        color: white;
+        animation: text-move 1.5s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+    }
+    .titleContainer {
+        position: relative;
+        z-index: 0;
+        width: 50%;
+        height: 6rem;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 5px;
+        box-shadow: 0 0 4px 3px rgba(255, 255, 255, 0.1);
+        filter: blur(12px);
+        transform: scale(2) translateY(50px);
+    }
+    .title {
+        text-shadow: 0px 1px 1px black;
+        position: relative;
+        z-index: 3;
+        color: var(--darkRed);
+        font-size: 3rem;
+        font-family: font-family: 'Staatliches', sans-serif;
+        font-weight: bold;
+        animation: text-move 1.5s;
+    }
+    .paragraph {
+        color: white; 
+        font-size: 1.5rem;
+    }
     .btn-slide {
         cursor: pointer;
         position: absolute;
-        top:40%;
+        top:35%;
         color: black;
         font-weight: bold;
         transition: 0.6s ease;
@@ -152,28 +122,34 @@ const ImgWrapper = styled.div`
     .active, .dot: hover {
         background-color: var(--mainRed)
     }
-    .fade {
-        opacity: 1;
-        animation-name: fade;
-        animation-duration: 1.5s;
-    }
-    @keyframes fade {
-        from {opacity: 0.4} to {opacity: 1}
-    }
     .centered{
         position: absolute;
-        top: 46%;
+        top: 44%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-        animation: text-move 2s;
         z-index: 2;
-        color: var(--mainRed);
         width: 60%;
     }
     img{
         filter: grayscale(40%) brightness(70%);
-        z-index: 0;
+        z-index: 9999;
+    }
+    .under{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        animation: text-move1 2s ease-in 2s;
+        animation: fade-in 2s ease-in 1s;
+        opacity: 0;
+        animation-fill-mode: forwards;
+        width:60%;
+        z-index: 2;
+    }
+    .under > * {
+        font-family: 'Abel', sans-serif;
     }
     h1 {
         text-transform: uppercase;
@@ -191,6 +167,28 @@ const ImgWrapper = styled.div`
         animation-duration: 2s;
         font-family: 'Staatliches', sans-serif;
     }
+    .phone {
+        margin-left: 0.3rem;
+        color: var(--blueGreen);
+        text-shadow: 2px 2px 2px black;
+    }
+    .btn-phone {
+        padding: 0.5rem;
+        background: transparent;
+        border: none;
+        color: var(--blueGreen);
+        text-shadow: 2px 2px 2px black;
+        outline: none;
+    }
+    .btn-phone:hover {
+        color: var(--mainRed);
+        text-shadow: 2px 2px 2px black;
+        animation: text-jump 0.2s;
+        animation-iteration-count: 3;
+        span {
+            color: var(--mainRed);
+        }
+    }
     @media (min-width: 1024px) {
         h1{
             font-size:4rem;
@@ -202,20 +200,29 @@ const ImgWrapper = styled.div`
             animation: text-enlarge-lg 2s;
             text-shadow: 2px 2px 2px white;
         }
+        i{
+            font-size:3rem;
+        }
+        .title {
+            font-size:3rem;
+        }
     }
     @media (max-width: 1024px) {
         h1{
-            font-size:3rem;
-            animation: text-enlarge-md 2s;
+            font-size:2rem;
+            animation: text-enlarge-sm 2s;
             text-shadow: 1px 1px 1px white;
         }
         .brand-name{
-            font-size:3rem;
-            animation: text-enlarge-md 2s;
+            font-size:2rem;
+            animation: text-enlarge-sm 2s;
             text-shadow: 1px 1px 1px white;
         }
-        .btn-slide {
-            top:35%;
+        i{
+            font-size:1.5rem;
+        }
+        .title {
+            font-size:1.5rem;
         }
     }
     @media (max-width: 500px) {
@@ -223,24 +230,28 @@ const ImgWrapper = styled.div`
             display: none;
         }
         h1{
-            font-size:2rem;
+            font-size:1.5rem;
             text-shadow: 1px 1px 0.5px white;
-            animation: text-enlarge-sm 2s;
         }
         .brand-name{
-            font-size:2rem;
+            font-size:1.5rem;
             text-shadow: 1px 1px 0.5px white;
-            animation: text-enlarge-sm 2s;
         }
-        .btn-slide {
-            top:30%;
+        .title {
+            font-size:1rem;
+        }
+        i{
+            font-size:1rem;
         }
     }
     @keyframes fade-in { from { opacity:0; } to { opacity:1; } }
     @keyframes text-enlarge-lg {from {font-size: 1rem;} to {font-size: 4rem;}}
-    @keyframes text-enlarge-sm {from {font-size: 1rem;} to {font-size: 2rem;}}
-    @keyframes text-enlarge-md {from {font-size: 1rem;} to {font-size: 3rem;}}
-    @keyframes text-move {from {top: 70%;} to {top:46%;}}
+    @keyframes text-enlarge-sm {from {font-size: 0.5rem;} to {font-size: 2rem;}}
+    @keyframes text-move {from {
+        transform: translateY(30rem);
+    } to {
+        transform: translateY(0);
+    }}
     @keyframes text-jump {
         from { transform: translate(0px, 0px); }
         to { transform: translate(0px, -3px); }

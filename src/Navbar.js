@@ -145,6 +145,7 @@ const NavWrapper = styled.nav`
         text-transfom: lowercase !important;
         font-family: 'Staatliches', sans-serif;
         font-size: 1.2rem;
+        color: var(--mainRed);
     }
     i {
         font-size: 2rem;
@@ -164,14 +165,12 @@ const NavWrapper = styled.nav`
         height: 3rem;
     }
     &.no-op{
-        background: var(--blueGreen) !important;
         transition: 1s !important;
     }
     .navbar-collapse{
         margin-left: auto !important;
     }
     &.fixed-top{
-        background: var(--blueGreen-opacity);
         transition: 1s !important;
     }
     .navbar-toggler{

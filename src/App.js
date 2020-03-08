@@ -9,6 +9,8 @@ import ModalMail from './Modal';
 import ModalPhone from './ModalPhone';
 import {Switch, Route} from  'react-router-dom';
 import About from './About';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 class App extends Component {
   constructor() {
@@ -41,6 +43,7 @@ class App extends Component {
   componentDidMount() {
     // Listen on click event, call our function.
     window.addEventListener('click', this.handleClick)
+    AOS.init({duration: 1200});
   }
   componentWillUnmount() {
       // Unlisten if the component unmounts.

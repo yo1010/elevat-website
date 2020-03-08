@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import CardItem from './CardItem';
 
 export default class Cards extends Component {
     render() {
@@ -10,15 +10,14 @@ export default class Cards extends Component {
                         Services & Practice Areas
                     </h3>
                 </div>
-                <div className="inbetween-line mx-auto mb-5"></div>
-                <div className="row mt-5">
-                    <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
-                        <div className="card">
-                            <div className="card-header">
-                                <span className="partners"><i className="far fa-caret-square-down" /></span>
+                <div className="inbetween-line mx-auto" data-aos="fade-left" data-aos-duration="600"></div>
+                <div className="container">
+                    <CardItem content={
+                        <div className="ml-auto mr-5 card mt-5 firstCard" data-aos="fade-right" data-aos-duration="1000">
+                            <div className="card-header leftCard firstCard">
                                 <h4>Corporate Law</h4>
                             </div>
-                            <div className="info">
+                            <div className="card-text mx-3 my-3">
                                 <p>- Registration of companies and associations 
                                     and all further changes, related to their legal
                                     status</p>
@@ -31,14 +30,13 @@ export default class Cards extends Component {
                                 <p>- Commercial contracts and deals</p>
                             </div>
                         </div>
-                    </ProductWrapper>
-                    <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
-                        <div className="card">
-                            <div className="card-header">
-                                <span className="partners"><i className="far fa-caret-square-down" /></span>
-                                <h4>Contract & Labour law</h4>
+                    }/>
+                    <CardItem content={
+                        <div className="mr-auto ml-5 card mt-5 secondCard" data-aos="fade-left" data-aos-duration="1000">
+                            <div className="card-header rightCard secondCard">
+                                <h4>Contract & Labour Law</h4>
                             </div>
-                            <div className="info">
+                            <div className="card-text mx-3 my-3">
                                 <p>- Preparation of all kinds of named and unnamed agreements, responding to the interests and
                                 purposes of the parties</p>
                                 <p>- Representation in negotiations and meetings, Legal statements and Consultings</p>
@@ -47,31 +45,27 @@ export default class Cards extends Component {
                                 <p>- Statements regarding the application of the Labour Code</p>
                             </div>
                         </div>
-                    </ProductWrapper>
-                    <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
-                        <div className="card">
-                            <div className="card-header">
-                                <span className="partners"><i className="far fa-caret-square-down" /></span>
-                                <h4>Legal advice on Intellectual property &
-                                    <p className="paragraph2">Construction Agreements</p></h4>
+                    }/>
+                    <CardItem content={
+                        <div className="ml-auto mr-5 card mt-5 thirdCard" data-aos="fade-right" data-aos-duration="1000">
+                            <div className="card-header leftCard thirdCard">
+                                <h4>Intellectual Property & <h4>Construction Agreements</h4></h4>
                             </div>
-                            <div className="info">
-                                <p>- Protection and conceding of copyrights</p>
+                            <div className="card-text mx-3 my-3">
+                                <p>- Protection and conceding of copylefts</p>
                                 <p>- Registration of trademarks and industrial samples</p>
-                                <p className="mt-5">- Preparation & consulting of CONSTRUCTION Agreements as per the Bulgarian Law, FIDIC
+                                <p>- Preparation & consulting of CONSTRUCTION Agreements as per the Bulgarian Law, FIDIC
                                     Conditions of Contracts ect, Project, Design & Construction Contracts in specific business
                                     areas: gas pipelining & gas pipeline repairing, WWTP (wastewater treatment plants) ect</p>
                             </div>
                         </div>
-                    </ProductWrapper>
-                    <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
-                        <div className="card">
-                            <div className="card-header">
-                                <div className="iconWrapper"><span className="partners">
-                                    <i className="far fa-caret-square-down" /></span></div>   
-                                <h4>Full Legal services re: PUBLIC PROCUREMENT PROCEDURES</h4>
+                    }/>
+                    <CardItem content={
+                        <div className="mr-auto ml-5 card mt-5 fourthCard" data-aos="fade-left" data-aos-duration="500">
+                            <div className="card-header rightCard fourthCard">
+                                <h4>Public procurement procedures</h4>
                             </div>
-                            <div className="info">
+                            <div className="card-text mx-3 my-3">
                                 <p>- Preparation of Tender documentation with regards to participation in Public Procurement</p>
                                 <p>- Procedures in due compliance with the requirements of the Public Procurement Act of Bulgaria and
                                     the relevant Bulgarian legislation.</p>
@@ -81,64 +75,10 @@ export default class Cards extends Component {
                                 <p>- Disputes, Claims, Appeal before the Competition Protection Commission. Court Procedures ect</p>
                             </div>
                         </div>
-                    </ProductWrapper>
+                    }/>
                 </div>
             </React.Fragment>
             
         )
     }
 }
-
-const ProductWrapper = styled.div`
-    .card{
-        border-radius: 0.2rem;
-        transition:all 0.5s linear;
-        border: transparent;
-        margin-left: 0.5px;
-        margin-right: 0.5px;
-        background: none;
-        margin-right: 1rem;
-        margin-left: 1rem;
-    }
-    .card-header{
-        background: none;
-        transition: all 0.5s linear;
-        border: none;
-        border-top-right-radius: 0.2rem;
-        border-top-left-radius: 0.2rem;
-        border-top: solid var(--blueGreen);
-        text-align: center;
-    }
-    &:hover{
-        .card{
-            border: none;
-            box-shadow:2px 2px 5px 0px rgba(0,0,0,0.2);
-            h4{
-                color: var(--yellowGreen);
-            }
-        }
-        .card-header{
-            background: var(--blueGreen-opacity);
-        }
-        .info{
-            display: block;
-            transition: 1s; 
-        }
-        .partners{
-            display: none;
-        }
-    }
-    .info {
-        display: none;
-    }
-    i {
-        font-size: 2rem;
-        align-self: center;
-    }
-    .green {
-        color: var(--yellowGreen)
-    }
-    .paragraph2 {
-        font-size: 1.5rem;
-    }
-`
