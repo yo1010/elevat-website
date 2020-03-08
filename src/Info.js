@@ -12,7 +12,7 @@ export default function Info() {
                     <div className="inbetween-line mx-auto mb-5" data-aos="fade-right" data-aos-duration="600" data-aos-delay="300"></div>
                     <div className="row mx-2">
                         <div className="info-item col-9 mx-auto col-md-6 col-lg-6 m-2" data-aos="fade-up" data-aos-duration="600">
-                            <div className="sm-inbetween-line mx-auto my-5"></div>
+                            <div className="sm-inbetween-line mx-auto my-5" data-aos="flip-up"></div>
                             <h5>
                                 <span className="company-name">ELEVAT LTD. LEGAL HOUSE</span> is a professional legal and consulting company with 17 years of
                                 practice in the provision of legal counseling and juridical advice to national and
@@ -33,7 +33,7 @@ export default function Info() {
                             </h5>
                         </div>
                         <div className="info-item col-9 mx-auto col-md-6 col-lg-6 m-2" data-aos="fade-up" data-aos-duration="600">
-                            <div className="sm-inbetween-line mx-auto my-5"></div>
+                            <div className="sm-inbetween-line mx-auto my-5" data-aos="flip-left"></div>
                             <h5>
                                 <span className="company-name">ELEVAT LTD. LEGAL HOUSE</span> began its activity in 1994 as a joint venture partnership and was
                                 registered as a limited company in 1995.

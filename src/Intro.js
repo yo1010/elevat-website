@@ -14,6 +14,9 @@ export default class Intro extends Component {
                     <p className="intro">a professional legal and consulting company with 17 years of
                         practice in the provision of legal counseling and juridical advice</p>
                 </div>
+                <button className="scrollButton">
+                    <i className="fas fa-chevron-down"></i>
+                </button> 
             </ImgWrapper>                
         )
     }
@@ -38,6 +41,17 @@ const ImgWrapper = styled.div`
         animation: text-move 1.5s;
         animation-delay: 0.5s;
         animation-fill-mode: forwards;
+    }
+    .scrollButton {
+        position: absolute;
+        top: 80%;
+        left: 47%;
+        background: none;
+        border: none;
+        color: var(--blueGreen);
+        z-index: 20;
+        font-size: 2rem;
+        animation: text-jump 0.5s infinite forwards;
     }
     .titleContainer {
         position: relative;
