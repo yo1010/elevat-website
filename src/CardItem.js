@@ -12,11 +12,33 @@ export default function CardItem(props) {
 }
 
 const ProductWrapper = styled.div`
+    img {
+        position: relative;
+        overflow: hidden;
+        height: 20rem;
+        box-shadow: inset 0 0 0 1000px rgba(194, 8, 5, 0.2);
+        z-index: -2;
+    }
+    .imgContainer {
+        position: relative;
+        height: 20rem;
+        width: 30.7rem;
+        background: none;
+        box-shadow: inset 0 0 0 1000px rgba(194, 8, 5, 0.5);
+        box-sizing: border-box;
+    }
     .card-header {
         background: var(--blueGreen);
         border: solid 0.2rem var(--blueGreen);
         border-radius: 0.2rem;
         padding-bottom: 4rem;
+        width: auto;
+    }
+    .card {
+        z-index: 1;
+    }
+    .rightImgContainer {
+        left: -50%;
     }
     .leftCard {
         clip-path: polygon(100% 0%, 0% 0%, 100% 100%);
@@ -44,6 +66,11 @@ const ProductWrapper = styled.div`
     }
     .paragraph2 {
         font-size: 1.5rem;
+    }
+    @media (max-width: 1207px) {
+        .colContainer {
+            display: none;
+        }
     }
     @keyframes slide-left {
         from { transform: translateX(-50rem); }

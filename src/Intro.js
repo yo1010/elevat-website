@@ -3,18 +3,22 @@ import img from '../public/img/office-work.jpg';
 import styled from "styled-components";
 
 export default class Intro extends Component {
+    scrollDown = () => {
+        window.scrollTo(0, 625)
+    }
     render() {
         return (
-            <ImgWrapper className="img-container center">
+            <ImgWrapper className="imgContainer center">
                 <div>
                     <img src={img} />
                 </div>
                 <div className="centered">
                     <div className="titleContainer mx-auto"></div><h5 className="title mx-auto">Elevat <span className="black">Legal House</span></h5>
                     <p className="intro">a professional legal and consulting company with 17 years of
-                        practice in the provision of legal counseling and juridical advice</p>
+                        practice</p> 
+                    <p className="intro">in the provision of legal counseling and juridical advice</p>
                 </div>
-                <button className="scrollButton">
+                <button className="scrollButton" onClick={this.scrollDown}>
                     <i className="fas fa-chevron-down"></i>
                 </button> 
             </ImgWrapper>                
@@ -25,6 +29,7 @@ export default class Intro extends Component {
 
 const ImgWrapper = styled.div`
     z-index: 1;
+    background:${'../public/img/office-work.jpg'};
     img {
         height: 100vh;
         width: 100%;
@@ -48,6 +53,7 @@ const ImgWrapper = styled.div`
         left: 47%;
         background: none;
         border: none;
+        outline: none;
         color: var(--blueGreen);
         z-index: 20;
         font-size: 2rem;
