@@ -12,6 +12,7 @@ export default function CardItem(props) {
 }
 
 const ProductWrapper = styled.div`
+    margin-top: 2rem;
     img {
         position: relative;
         overflow: hidden;

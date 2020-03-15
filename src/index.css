@@ -1,10 +1,17 @@
 html,body
 {
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+}
+
+
+@media (max-width: 499px) {
+  html,body {
     overflow-x: hidden;
-    scroll-behavior: smooth;
+    overflow-y: visible;
+  }
 }
 
 body {
