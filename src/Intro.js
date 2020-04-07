@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import img from './office-work.jpg';
+import img from '../public/img/office-work.jpg';
 import styled from "styled-components";
 
 export default class Intro extends Component {
@@ -10,16 +10,15 @@ export default class Intro extends Component {
         return (
             <ImgWrapper className="center">
                 <div className="imgContainer">
+                    <img src={img} />
                 </div>
                 <div className="centered">
-                    <div className="titleContainer mx-auto">
-                    </div>
-                    <h5 className="title mx-auto">Elevat <span className="black">Legal House</span></h5>
-                    <p className="intro mx-auto">a professional legal and consulting company with 17 years of
+                    <div className="titleContainer mx-auto"></div><h5 className="title mx-auto">Elevat <span className="black">Legal House</span></h5>
+                    <p className="intro">a professional legal and consulting company with 17 years of
                         practice</p> 
-                    <p className="intro mx-auto">in the provision of legal counseling and juridical advice</p>
+                    <p className="intro">in the provision of legal counseling and juridical advice</p>
                 </div>
-                <button className="scrollButton" onClick={this.scrollDown}>
+                <button className="scrollButton" onClick={() => this.scrollDown()}>
                     <i className="fas fa-chevron-down"></i>
                 </button> 
             </ImgWrapper>                
@@ -30,13 +29,9 @@ export default class Intro extends Component {
 
 const ImgWrapper = styled.div`
     z-index: 1;
-    width: 100%;
-    .imgContainer {
+    img {
+        max-height: 100vh;
         width: 100%;
-        height: 100vh;
-        background-image: url(${img});
-        background-position: center;
-        filter: grayscale(40%) brightness(70%);
     }
     .black {
         color: white;
@@ -64,7 +59,7 @@ const ImgWrapper = styled.div`
         animation: text-jump 0.5s infinite forwards;
     }
     .titleContainer {
-        margin-top: 7rem;
+        position: relative;
         z-index: 0;
         width: 50%;
         height: 6rem;
@@ -75,8 +70,8 @@ const ImgWrapper = styled.div`
         transform: scale(2) translateY(50px);
     }
     .title {
-        width: 50%;
         text-shadow: 0px 1px 1px black;
+        position: relative;
         z-index: 3;
         color: var(--darkRed);
         font-size: 3rem;
@@ -88,18 +83,92 @@ const ImgWrapper = styled.div`
         color: white; 
         font-size: 1.5rem;
     }
-    .centered{
-        width: 100%;
-        height: 100vh;
+    .btn-slide {
+        cursor: pointer;
         position: absolute;
-        top: 0%;
-        left: 0%;
+        top:35%;
+        color: black;
+        font-weight: bold;
+        transition: 0.6s ease;
+        border: none;
+        user-select: none;
+        z-index: 3;
+        background: none;
+        outline: none;
+    }
+    .dots{
+        position: absolute;
+        top: 90%;
+        width:100%;
+        text-align: center;
+        background: none;
+    }
+    .arrow {
+        font-size: 3rem;
+    }
+    .prev {
+        left: 0;
+        padding-left: 0;
+    }
+    .next {
+        right: 0;
+        padding-right: 0;
+    }
+    .btn-slide:hover {
+        color: var(--mainRed);
+        text-shadow: 2px 2px 2px black;
+        animation: text-jump 0.2s;
+        animation-iteration-count: 3;
+    }
+    .numbertext {
+        color: var(--mainRed);
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: lightgrey;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        margin-top: 0.4rem;
+    }
+    .active, .dot: hover {
+        background-color: var(--mainRed)
+    }
+    .centered{
+        position: absolute;
+        top: 44%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         text-align: center;
         z-index: 2;
+        width: 60%;
     }
     img{
         filter: grayscale(40%) brightness(70%);
         z-index: 9999;
+    }
+    .under{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        animation: text-move1 2s ease-in 2s;
+        animation: fade-in 2s ease-in 1s;
+        opacity: 0;
+        animation-fill-mode: forwards;
+        width:60%;
+        z-index: 2;
+    }
+    .under > * {
+        font-family: 'Abel', sans-serif;
     }
     h1 {
         text-transform: uppercase;
@@ -175,7 +244,7 @@ const ImgWrapper = styled.div`
             font-size:1.5rem;
         }
     }
-    @media (max-width: 499px) {
+    @media (max-width: 500px) {
         .dots {
             display: none;
         }
@@ -190,17 +259,19 @@ const ImgWrapper = styled.div`
         .title {
             font-size:1rem;
         }
-        i{
-            font-size:2rem;
-        }
-        img {
-            width: auto;
+        i {
+            font-size: 2rem;
         }
         .scrollButton {
-            left: 38%;
+            left: 40%;
         }
-        p{
-            width: 70%;
+        img {
+            float: center;
+            width: 200%;
+            height: 110vh;
+        }
+        .imgContainer {
+            overflow-x: hidden;
         }
     }
     @keyframes fade-in { from { opacity:0; } to { opacity:1; } }
